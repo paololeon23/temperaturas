@@ -502,7 +502,9 @@ export default function App() {
           <nav className="mt-8 space-y-2 text-sm">
             <p
               className={`flex items-center rounded-lg py-2 transition-colors font-semibold ${
-                sidebarOpen ? "gap-2 bg-white/20 px-3" : "justify-center bg-white/20 px-0"
+                sidebarOpen
+                  ? "w-full justify-start gap-2 bg-white/20 px-3"
+                  : "w-full justify-center bg-white/20 px-0"
               } hover:bg-white/30`}
             >
               <BarChart3 size={16} />
@@ -510,7 +512,7 @@ export default function App() {
             </p>
             <p
               className={`flex items-center rounded-lg py-2 transition-colors ${
-                sidebarOpen ? "gap-2 px-3" : "justify-center px-0"
+                sidebarOpen ? "w-full justify-start gap-2 px-3" : "w-full justify-center px-0"
               } hover:bg-white/20`}
             >
               <ClipboardPen size={16} />
@@ -518,7 +520,7 @@ export default function App() {
             </p>
             <p
               className={`flex items-center rounded-lg py-2 transition-colors ${
-                sidebarOpen ? "gap-2 px-3" : "justify-center px-0"
+                sidebarOpen ? "w-full justify-start gap-2 px-3" : "w-full justify-center px-0"
               } hover:bg-white/20`}
             >
               <Boxes size={16} />
@@ -526,7 +528,7 @@ export default function App() {
             </p>
             <p
               className={`flex items-center rounded-lg py-2 transition-colors ${
-                sidebarOpen ? "gap-2 px-3" : "justify-center px-0"
+                sidebarOpen ? "w-full justify-start gap-2 px-3" : "w-full justify-center px-0"
               } hover:bg-white/20`}
             >
               <CalendarRange size={16} />
@@ -534,7 +536,7 @@ export default function App() {
             </p>
             <p
               className={`flex items-center rounded-lg py-2 transition-colors ${
-                sidebarOpen ? "gap-2 px-3" : "justify-center px-0"
+                sidebarOpen ? "w-full justify-start gap-2 px-3" : "w-full justify-center px-0"
               } hover:bg-white/20`}
             >
               <Bot size={16} />
