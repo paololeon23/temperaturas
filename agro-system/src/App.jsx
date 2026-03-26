@@ -500,32 +500,58 @@ export default function App() {
           </div>
 
           <nav className="mt-8 space-y-2 text-sm">
-            <p className="flex items-center gap-2 rounded-lg bg-white/20 px-3 py-2 font-semibold">
+            <p
+              className={`flex items-center rounded-lg py-2 transition-colors font-semibold ${
+                sidebarOpen ? "gap-2 bg-white/20 px-3" : "justify-center bg-white/20 px-0"
+              } hover:bg-white/30`}
+            >
               <BarChart3 size={16} />
               {sidebarOpen ? "Dashboard inteligente" : ""}
             </p>
-            <p className="flex items-center gap-2 rounded-lg px-3 py-2">
+            <p
+              className={`flex items-center rounded-lg py-2 transition-colors ${
+                sidebarOpen ? "gap-2 px-3" : "justify-center px-0"
+              } hover:bg-white/20`}
+            >
               <ClipboardPen size={16} />
               {sidebarOpen ? "Registro de contenedor" : ""}
             </p>
-            <p className="flex items-center gap-2 rounded-lg px-3 py-2">
+            <p
+              className={`flex items-center rounded-lg py-2 transition-colors ${
+                sidebarOpen ? "gap-2 px-3" : "justify-center px-0"
+              } hover:bg-white/20`}
+            >
               <Boxes size={16} />
               {sidebarOpen ? "BD General" : ""}
             </p>
-            <p className="flex items-center gap-2 rounded-lg px-3 py-2">
+            <p
+              className={`flex items-center rounded-lg py-2 transition-colors ${
+                sidebarOpen ? "gap-2 px-3" : "justify-center px-0"
+              } hover:bg-white/20`}
+            >
               <CalendarRange size={16} />
               {sidebarOpen ? "Reportes por periodo" : ""}
             </p>
-            <p className="flex items-center gap-2 rounded-lg px-3 py-2">
+            <p
+              className={`flex items-center rounded-lg py-2 transition-colors ${
+                sidebarOpen ? "gap-2 px-3" : "justify-center px-0"
+              } hover:bg-white/20`}
+            >
               <Bot size={16} />
               {sidebarOpen ? "IA Predictiva" : ""}
             </p>
           </nav>
 
-          <div className="mt-auto rounded-xl bg-white/15 p-3 text-xs text-blue-50">
-            {sidebarOpen
-              ? "Motor IA activo 24/7: detecta riesgos, rendimiento por destino y alertas tempranas."
-              : "IA"}
+          <div
+            className={`mt-auto rounded-xl bg-white/15 p-3 text-xs text-blue-50 ${
+              sidebarOpen ? "" : "flex items-center justify-center"
+            }`}
+          >
+            {sidebarOpen ? (
+              "Motor IA activo 24/7: detecta riesgos, rendimiento por destino y alertas tempranas."
+            ) : (
+              <Bot size={16} />
+            )}
           </div>
         </div>
       </aside>
@@ -620,6 +646,8 @@ export default function App() {
               </div>
             </header>
 
+            <PdfReportAnalyzer />
+
             <section className="grid grid-cols-1 gap-4 md:grid-cols-3">
               <article
                 onClick={() =>
@@ -712,8 +740,6 @@ export default function App() {
             </section>
 
             <Dashboard data={periodData} />
-
-            <PdfReportAnalyzer />
 
             <section className="rounded-2xl bg-white p-4 shadow-sm ring-1 ring-slate-200">
               <h2 className="mb-3 text-lg font-semibold text-[#1b4f8a]">
