@@ -1,5 +1,7 @@
 [build]
-  command = "cd agro-system && npm run build"
+  # En algunos entornos el binario `vite` puede venir sin permiso de ejecución.
+  # Usamos `node .../vite.js` para evitar el error `vite: Permission denied`.
+  command = "cd agro-system && node ./node_modules/vite/bin/vite.js build"
   publish = "agro-system/dist"
 
 [[redirects]]
